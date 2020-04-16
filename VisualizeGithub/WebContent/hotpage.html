@@ -1,0 +1,117 @@
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>HotPage</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="https://fonts.googleapis.com/css?family=Chivo:400,900" rel="stylesheet" />
+<link href="plugins/hotpage/default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="plugins/hotpage/fonts.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+<link href="plugins/general.css" rel="stylesheet" type="text/css" media="all" />
+<!-- d3 -->
+<link href="dist/css/d3.css" rel="stylesheet">
+<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="dist/js/d3.js" type="text/javascript"></script>
+
+</head>
+<body>
+
+
+<div id="wrapper">
+	<div id="header-wrapper">
+		<div id="header" class="container">
+			<div id="logo">
+				<h1><a href="index.html">visualizeGithub</a></h1>				
+			</div>
+		</div>
+	</div>
+	<div id="menu-wrapper">
+	<nav id="menu-wrapper" class="nav navbar-default">
+		<div id="menu" class="container ">
+			<ul class="nav navbar-nav">
+                <li class="active"><a data-toggle="tab" href="#star" id="star-toggle"><font color="red"><strong>Star</strong></font></a></li>
+                <li><a data-toggle="tab" href="#fork" id="fork-toggle"><font color="red"><strong>fork</strong></font></a></li>
+                <li><a data-toggle="tab" href="#follow" id="follow-toggle"><font color="red"><strong>follow</strong></font></a></li>
+			</ul>
+		</div> 
+	</nav>
+	</div>
+		
+	<!--<div id="banner"></div>--> 
+	<div class="tab-content">
+        <div id="star" class=" tab-pane fade in active">
+			<div class="w3-row">
+				<div class="w3-col" style="width:60%;padding:25px;">
+					<h2 style="padding:0 0 15px 50px;">熱門 Star 專案</h2>
+				
+					<div style="padding:0 0 0 84%;">
+						<select class="form-control" id="star-date" name="date" style="color:black;width:110px;">
+							<option selected value="30">一個月內</option>
+							<option value="365">一年內</option>
+						</select>
+					</div>
+					<div class="w3-row" id="starContent"></div>					
+				</div>
+				<div class="w3-col" style="width:40%;padding:25px;">
+					<div>
+						<button class="btn btn-primary" onclick="changeToPieChart('#star-chart','#star-color')">圓餅圖</button>
+						<button class="btn btn-success" onclick="changeToBarChart('#star-chart')">長條圖</button>
+					    <div id="star-chart"></div>
+					    <div id="star-color"></div>
+					</div>
+				</div>			
+			</div>
+		</div>
+	
+		<div id="fork" class=" tab-pane fade ">
+			<div class="w3-row">
+				<div class="w3-col" style="width:60%;padding:25px;">
+					<h2 style="padding:0 0 15px 50px;">熱門 Fork 專案</h2>
+					
+					<div style="padding:0 0 0 84%;">
+						<select class="form-control" id="fork-date" name="date" style="color:black;width:110px;">
+							<option selected value="30">一個月內</option>
+							<option value="365">一年內</option>
+						</select>
+					</div>
+					<div class="w3-row" id="forkContent"></div>					
+				</div>
+				<div class="w3-col" style="width:40%;padding:25px;">
+					<div>
+						<button class="btn btn-primary" onclick="changeToPieChart('#fork-chart','#fork-color')">圓餅圖</button>
+						<button class="btn btn-success" onclick="changeToBarChart('#fork-chart')">長條圖</button>
+					    <div id="fork-chart"></div>
+					    <div id="fork-color"></div>
+					</div>
+				</div>			
+			</div>
+		</div>
+	
+		<div id="follow" class=" tab-pane fade ">
+			<div class="w3-row">
+				<div class="w3-col" style="width:60%;padding:25px;">
+					<h2 style="padding:0 0 15px 50px;">熱門 Follow 使用者</h2>
+					<div class="w3-row" id="followContent"></div>			
+				</div>
+				<div class="w3-col" style="width:40%;padding:25px;">
+					<div>
+						<button class="btn btn-primary" onclick="changeToPieChart('#follow-chart','#follow-color')">圓餅圖</button>
+						<button class="btn btn-success" onclick="changeToBarChart('#follow-chart')">長條圖</button>
+					    <div id="follow-chart"></div>
+					    <div id="follow-color"></div>
+					</div>
+				</div>		
+			</div>
+	</div>
+</div>
+</div>
+<!-- hotpage.js -->
+<script src="dist/js/hotpage.js" type="text/javascript"></script>
+</body>
+</html>
